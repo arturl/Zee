@@ -1,0 +1,7 @@
+DAT("Notepad", DiscoverNotepad)
+DAT("Slick Edit", DiscoverSlickEdit)
+DAT("EditPlus", DiscoverEditPlus)
+DAT("Visual Studio", DiscoverVisualStudio)
+DAT("Notepad++", DiscoverNotepadPlusPlus)
+DAT("UltraEdit", DiscoverUltraEdit)
+DAT("Sublime Text", DiscoverSublime)
