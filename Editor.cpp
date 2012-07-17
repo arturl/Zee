@@ -80,7 +80,7 @@ void Editor::OpenFile(LPCWSTR fileName, int lineNumber )
 	ZeroMemory( &pi, sizeof(pi) );
 
 	WCHAR szFullCommandLine[MAX_PATH*2];
-	swprintf_s(szFullCommandLine, arraylen(szFullCommandLine), L"\"%s\" %s", szExe, szCommandLine );
+	swprintf_s(szFullCommandLine, arraylen(szFullCommandLine), L"\"%s\" \"%s\"", szExe, szCommandLine );
 
 	// Start the child process.
 	if( !CreateProcess( NULL,

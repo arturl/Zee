@@ -24,6 +24,7 @@
 *.sdf
 *.opensdf
 *.unsuccessfulbuild
+*.vcxproj.user
 ipch/
 obj/
 [Bb]in
