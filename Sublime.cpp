@@ -38,7 +38,7 @@ private:
 
     virtual void FormatParameters(LPWSTR pszParams, int paramSize, LPCWSTR pszFilename, int lineNumber)
     {
-        swprintf_s(pszParams, paramSize, L"%s:%d:%d", pszFilename, lineNumber, 1 );
+        swprintf_s(pszParams, paramSize, L"\"%s\":%d:%d", pszFilename, lineNumber, 1 );
     }
 };
 

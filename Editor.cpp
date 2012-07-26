@@ -69,8 +69,8 @@ void Editor::OpenFile(LPCWSTR fileName, int lineNumber )
 	WCHAR szExe[MAX_PATH];
 	this->GetExecutable(szExe, arraylen(szExe));
 
-	WCHAR szCommandLine[MAX_PATH];
-	this->FormatParameters(szCommandLine, arraylen(szExe), szFullPathName, lineNumber);
+	WCHAR szFileNameWithLineNumber[MAX_PATH];
+	this->FormatParameters(szFileNameWithLineNumber, arraylen(szExe), szFullPathName, lineNumber);
 
 	STARTUPINFO si;
 	PROCESS_INFORMATION pi;
@@ -80,7 +80,7 @@ void Editor::OpenFile(LPCWSTR fileName, int lineNumber )
 	ZeroMemory( &pi, sizeof(pi) );
 
 	WCHAR szFullCommandLine[MAX_PATH*2];
-	swprintf_s(szFullCommandLine, arraylen(szFullCommandLine), L"\"%s\" \"%s\"", szExe, szCommandLine );
+	swprintf_s(szFullCommandLine, arraylen(szFullCommandLine), L"\"%s\" %s", szExe, szFileNameWithLineNumber );
 
 	// Start the child process.
 	if( !CreateProcess( NULL,
