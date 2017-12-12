@@ -141,7 +141,6 @@ Editor& EditorBuilder::GetDefaultEditor()
 		}
 
 		RegCloseKey(key);
-
 	}
 
 	if( defaultEditor_ == NULL )

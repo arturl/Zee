@@ -190,6 +190,7 @@
     <ClCompile Include="Sublime.cpp" />
     <ClCompile Include="UltraEdit.cpp" />
     <ClCompile Include="VisualStudio.cpp" />
+    <ClCompile Include="VSCode.cpp" />
     <ClCompile Include="Zee.cpp" />
   </ItemGroup>
   <ItemGroup>

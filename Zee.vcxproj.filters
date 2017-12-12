@@ -51,6 +51,9 @@
     <ClCompile Include="Sublime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VSCode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommandLineParser.h">

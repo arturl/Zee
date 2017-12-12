@@ -179,6 +179,7 @@
     <ClCompile Include="..\NotepadPlusPlus.cpp" />
     <ClCompile Include="..\SlickEdit.cpp" />
     <ClCompile Include="..\Sublime.cpp" />
+    <ClCompile Include="..\VSCode.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
