@@ -37,9 +37,9 @@ private:
 	}
 };
 
-Editor* DiscoverNotepadPlusPlus()
+std::unique_ptr<Editor> DiscoverNotepadPlusPlus()
 {
-	return new NotepadPlusPlus();
+	return std::make_unique<NotepadPlusPlus>();
 }
 
 

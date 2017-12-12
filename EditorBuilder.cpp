@@ -45,7 +45,7 @@ bool g_ForceSetup = false;
 
 Editor& EditorBuilder::GetDefaultEditor()
 {
-	int selectedEditor = -1; // don't have default editor
+	ptrdiff_t selectedEditor = -1; // don't have default editor
 	HKEY key;
 	LPCWSTR szZeeHive = L"Software\\Zee";
 	LONG lRet = RegOpenKeyW(HKEY_CURRENT_USER, szZeeHive, &key);
@@ -68,14 +68,11 @@ Editor& EditorBuilder::GetDefaultEditor()
 		if( lRet == ERROR_SUCCESS )
 		{
 			// Now look up this editor in the list
-			for( int i=0; i<editorCount; ++i )
-			{
-				if( wcscmp(editorNames[i],data)==0 )
-				{
-					selectedEditor = i;
-					break;
-				}
-			}
+			selectedEditor = std::distance(editorNames, 
+										std::find_if(editorNames, editorNames + editorCount, 
+													 [=](auto elem) {
+														return wcscmp(elem, data) == 0;
+													 }));
 		}
 	}
 
@@ -92,7 +89,7 @@ Editor& EditorBuilder::GetDefaultEditor()
 			wprintf(L"Default editor not set, select from the following choices:\n");
 			int index=0;
 			int indexmap[editorCount] = {-1};
-			Editor* supportedEditors[editorCount];
+			std::unique_ptr<Editor> supportedEditors[editorCount];
 
 			// List all supported editors and ask for default one
 			for( int i=0; i<editorCount; ++i )
@@ -107,7 +104,7 @@ Editor& EditorBuilder::GetDefaultEditor()
 			}
 			wprintf(L">");
 			int iSelection = -1;
-			int ret = wscanf_s(L"%s", szNumber, arraylen(szNumber));
+			int ret = wscanf_s(L"%s", szNumber, (unsigned int)arraylen(szNumber));
 			if( ret > 0 )
 			{
 				iSelection = _wtoi(szNumber);
@@ -119,16 +116,7 @@ Editor& EditorBuilder::GetDefaultEditor()
 			}
 			selectedEditor = indexmap[iSelection];
 
-			// Delete editors that will not be used
-			for( int i=0; i<editorCount; ++i )
-			{
-				if( i != selectedEditor )
-				{
-					delete supportedEditors[i];
-				}
-			}
-
-			defaultEditor_ = supportedEditors[selectedEditor];
+			defaultEditor_ = std::move(supportedEditors[selectedEditor]);
 			wprintf(L"Setting %s as default editor\n", editorNames[selectedEditor]);
 		}
 
@@ -152,6 +140,5 @@ Editor& EditorBuilder::GetDefaultEditor()
 
 EditorBuilder::~EditorBuilder()
 {
-	delete defaultEditor_;
 }
 

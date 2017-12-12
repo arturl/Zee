@@ -37,8 +37,8 @@ private:
 	}
 };
 
-Editor* DiscoverSlickEdit()
+std::unique_ptr<Editor> DiscoverSlickEdit()
 {
-	return new SlickEdit();
+	return std::make_unique<SlickEdit>();
 }
 

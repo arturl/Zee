@@ -37,9 +37,9 @@ private:
 	}
 };
 
-Editor* DiscoverEditPlus()
+std::unique_ptr<Editor> DiscoverEditPlus()
 {
-	return new EditPlus();
+	return std::make_unique<EditPlus>();
 }
 
 

@@ -6,7 +6,7 @@ class EditorBuilder
 {
 	PFNEditorFactory* methods_;
 	int numMethods_;
-	Editor* defaultEditor_;
+	std::unique_ptr<Editor> defaultEditor_;
 
 	void GetFactoryMethods();
 

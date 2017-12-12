@@ -37,9 +37,9 @@ private:
 	}
 };
 
-Editor* DiscoverUltraEdit()
+std::unique_ptr<Editor> DiscoverUltraEdit()
 {
-	return new UltraEdit();
+	return std::make_unique<UltraEdit>();
 }
 
 

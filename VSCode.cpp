@@ -37,9 +37,9 @@ private:
 	}
 };
 
-Editor* DiscoverVSCode()
+std::unique_ptr<Editor> DiscoverVSCode()
 {
-	return new VSCode();
+	return std::make_unique<VSCode>();
 }
 
 

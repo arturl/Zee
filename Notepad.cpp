@@ -21,8 +21,8 @@ class Notepad : public Editor
 	}
 };
 
-Editor* DiscoverNotepad()
+std::unique_ptr<Editor> DiscoverNotepad()
 {
-	return new Notepad();
+	return std::make_unique<Notepad>();
 }
 

@@ -42,9 +42,9 @@ private:
     }
 };
 
-Editor* DiscoverSublime2()
+std::unique_ptr<Editor> DiscoverSublime2()
 {
-    return new Sublime2();
+    return std::make_unique<Sublime2>();
 }
 
 class Sublime3 : public Editor
@@ -88,9 +88,9 @@ private:
 	}
 };
 
-Editor* DiscoverSublime3()
+std::unique_ptr<Editor> DiscoverSublime3()
 {
-	return new Sublime3();
+	return std::make_unique<Sublime3>();
 }
 
 

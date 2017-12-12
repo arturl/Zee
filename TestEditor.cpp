@@ -17,8 +17,8 @@ class TestEditor : public Editor
 	}
 };
 
-Editor* DiscoverTestEditor()
+std::unique_ptr<Editor> DiscoverTestEditor()
 {
-	return new TestEditor();
+	return std::make_unique<TestEditor>();
 }
 

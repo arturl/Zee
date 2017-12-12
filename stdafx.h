@@ -16,6 +16,7 @@
 #include <tchar.h>
 #include <windows.h>
 #include <crtdbg.h>
-
+#include <memory>
+#include <algorithm>
 
 // TODO: reference additional headers your program requires here

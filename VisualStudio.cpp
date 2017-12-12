@@ -214,9 +214,9 @@ private:
     }
 };
 
-Editor* DiscoverVisualStudio()
+std::unique_ptr<Editor> DiscoverVisualStudio()
 {
-    return new VisualStudio();
+    return std::make_unique<VisualStudio>();
 }
 
 

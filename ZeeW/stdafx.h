@@ -36,5 +36,7 @@
 #include <memory.h>
 #include <tchar.h>
 #include <crtdbg.h>
+#include <memory>
+#include <algorithm>
 
 #define arraylen(a) ((sizeof(a))/(sizeof(a[0])))
