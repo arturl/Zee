@@ -6,5 +6,6 @@ DAT("Notepad++", DiscoverNotepadPlusPlus)
 DAT("UltraEdit", DiscoverUltraEdit)
 DAT("Sublime Text 2", DiscoverSublime2)
 DAT("Sublime Text 3", DiscoverSublime3)
+DAT("Sublime Text 4", DiscoverSublime4)
 DAT("VS Code", DiscoverVSCode)
 //

@@ -59,3 +59,13 @@ packages/
 
 # visual studio database projects
 *.dbmdl
+.vs/Zee/config/applicationhost.config
+.vs/Zee/FileContentIndex/d2933f18-4517-4195-964e-32e829681d94.vsidx
+.vs/Zee/v17/Browse.VC.db
+.vs/Zee/v17/Browse.VC.db-shm
+.vs/Zee/v17/Browse.VC.db-wal
+.vs/Zee/v17/Browse.VC.opendb
+.vs/Zee/v17/DocumentLayout.json
+.vs/Zee/v17/Solution.VC.db
+.vs/Zee/v17/Solution.VC.db-shm
+.vs/Zee/v17/Solution.VC.db-wal
